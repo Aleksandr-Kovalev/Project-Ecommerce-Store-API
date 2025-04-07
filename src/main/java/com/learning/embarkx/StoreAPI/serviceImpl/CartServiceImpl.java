@@ -48,7 +48,7 @@ public class CartServiceImpl implements CartService {
             throw new APIException("Product " + product.getProductName() + " is out of stock");
         }
 
-        if(quantity <= product.getQuantity()) {
+        if(quantity > product.getQuantity()) {
             throw new APIException("Please, enter a valid quantity. Quantity should be less than or equal to " + quantity);
         }
 
